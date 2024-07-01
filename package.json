@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "example-module": "^1.0.0",
+    "express": "^4.19.2"
+  }
+}
