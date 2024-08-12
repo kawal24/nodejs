@@ -1,14 +1,14 @@
 const { Schema, default: mongoose } = require("mongoose");
 
-const personschema = new Schema(
+const userSchema = new Schema(
   {
-    firstname: { type: Schema, Types: String, required: true },
-    lastname: { type: Schema, Types: String, required: true },
-    dob: { type: Schema, Types: String, required: true },
-    email: { type: Schema, Types: String, required: true },
-    password: { type: Schema, Types: String, required: true },
-    address: { type: Schema, Types: String, required: true },
+    firstname: { type: String, required: true },
+    lastname: { type: String, required: true },
+    dob: { type: Date, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String },
+    address: { type: String },
   },
   { timestamps: true }
 );
-model.exports = mongoose("person", personschema);
+module.exports = mongoose.model("user", userSchema);
